@@ -25,7 +25,7 @@ function Avatar() {
           marginRight: 20,
         }}
       >
-        {image !== null ? (
+        {image !== "" || image !== undefined ? (
           <img src={`${baseUrl}${image}`} alt="avatar" className="avatar" />
         ) : (
           <FontAwesomeIcon
