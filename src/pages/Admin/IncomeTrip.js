@@ -1,5 +1,5 @@
 import Axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
@@ -8,7 +8,7 @@ import TourGrid from "../../components/TourGrid";
 import { baseUrl } from "../../dbConfig";
 
 function IncomeTrip() {
-  const { isLoading, error, data } = useQuery("trips", () => {
+  const { isLoading,  data } = useQuery("trips", () => {
     return Axios.get(`${baseUrl}api/v1/trip`);
   });
 
