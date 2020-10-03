@@ -1,14 +1,13 @@
 import Axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { authContext } from "../context/auth";
 import { baseUrl, config } from "../dbConfig";
-import Login from "./Login";
 
 const Increment = ({ setDeniedModal, tripid, price, setShowModalLogin }) => {
   const { role, userId, isLogin } = useContext(authContext);
   const [input, setInput] = useState({
-    userId: 0,
+    userId: null,
     counterQty: 1,
     total: price,
     status: "Waiting Payment",

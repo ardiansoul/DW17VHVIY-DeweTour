@@ -135,10 +135,13 @@ function Profile() {
 
           <h2 className="tour-group-title">History Transaction</h2>
 
-          {paymentData.data.data.map((transaction) => {
-            if (transaction.status === "Booking Approved")
+          {paymentData.data.data
+            .filter((transaction) => {
+              return transaction.status === "Booking Approved";
+            })
+            .map((transaction) => {
               return <BookingCard data={transaction} />;
-          })}
+            })}
         </>
       ) : (
         <div className="section"></div>

@@ -5,7 +5,6 @@ import axios from "axios";
 import { authContext } from "../context/auth";
 import hibicus from "../images/hibicus.svg";
 import palm from "../images/palm.svg";
-import { useHistory, useLocation } from "react-router-dom";
 import { baseUrl } from "../dbConfig";
 
 // import { UserDatas } from "../../fakedatas/UserDatas";

@@ -40,11 +40,14 @@ function Payment() {
         </div>
       ) : (
         <div>
-          {data.data.data.map((transaction) => {
-            if (
-              transaction.status === "Waiting Payment" ||
-              transaction.status === "Waiting Approve"
-            )
+          {data.data.data
+            .filter((transaction) => {
+              return (
+                transaction.status === "Waiting Payment" ||
+                transaction.status === "Waiting Approve"
+              );
+            })
+            .map((transaction) => {
               return (
                 <BookingCard
                   data={transaction}
@@ -52,7 +55,7 @@ function Payment() {
                   setConfirmModal={setConfirmModal}
                 />
               );
-          })}
+            })}
         </div>
       )}
       <Footer />

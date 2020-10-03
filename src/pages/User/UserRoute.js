@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { authContext } from "../../context/auth";
-import Login from "../../components/Login";
 
 function UserRoute(props) {
   const { role, isLogin } = useContext(authContext);

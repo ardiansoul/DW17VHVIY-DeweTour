@@ -1,7 +1,7 @@
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import { Redirect } from "react-router-dom";
 import Footer from "../../components/Footer";
@@ -26,12 +26,11 @@ function AddTrip() {
   const [file, setFile] = useState([]);
   // const [preview, setPreview] = useState(null);
 
-  const { isLoading, error, data } = useQuery("country", () => {
+  const { isLoading, data } = useQuery("country", () => {
     return Axios.get(`${baseUrl}api/v1/country`, config);
   });
 
   const handleSubmit = async () => {
-    const token = localStorage.token;
     try {
       const data = new FormData();
       data.append("title", formTrip.title);
